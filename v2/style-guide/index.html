@@ -1,0 +1,1001 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/style-guide/index.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vue.js">
+    <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta property="og:image" content="https://vuejs.org//images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vue.js">
+    <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+    <script>window.PAGE_TYPE = "style-guide"</script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'vuejs.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body class="docs">    <div id="mobile-bar" >
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Vue.js</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学ぶ</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">ガイド</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/style-guide/" class="nav-link current">スタイルガイド</a></li>
+      <li><a href="/v2/examples/" class="nav-link">例</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">エコシステム</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>ヘルプ</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank">フォーラム</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank">チャット(公式)</a></li>
+      <li><a href="https://vuejs-jp-slackin.herokuapp.com" class="nav-link" target="_blank">チャット(日本向け)</a></li>
+    </ul></li>
+    <li><h4>開発ツール</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools</a></li>
+        <li><a href="https://vuejs-templates.github.io/webpack" class="nav-link" target="_blank">Webpack テンプレート</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>コアライブラリ</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>ニュース</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank">ロードマップ</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">ブログ(英語)</a></li>
+      <li><a href="/blog/" class="nav-link" target="_blank">ブログ(日本語訳)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">ジョブ(海外)</a></li>
+    </ul></li>
+    <li><h4>リソースリスト</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">公式レポジトリ</a></li>
+      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Vue Curated</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">チーム</a>
+</li>
+<li>
+  <a href="/contribution/" class="nav-link">貢献</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a class="nav-link">Vue を支援する</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">ショップ</a></li>
+      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">OpenCollective で支援する</a></li>
+      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">Patreon で Evan を支援する</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">言語</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://cn.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">中文</a></li>
+    <li><a href="https://ru.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">한국어</a></li>
+    <li><a href="https://br.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+          
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学ぶ</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">ガイド</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/style-guide/" class="nav-link current">スタイルガイド</a></li>
+      <li><a href="/v2/examples/" class="nav-link">例</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">エコシステム</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>ヘルプ</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank">フォーラム</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank">チャット(公式)</a></li>
+      <li><a href="https://vuejs-jp-slackin.herokuapp.com" class="nav-link" target="_blank">チャット(日本向け)</a></li>
+    </ul></li>
+    <li><h4>開発ツール</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools</a></li>
+        <li><a href="https://vuejs-templates.github.io/webpack" class="nav-link" target="_blank">Webpack テンプレート</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>コアライブラリ</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>ニュース</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank">ロードマップ</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">ブログ(英語)</a></li>
+      <li><a href="/blog/" class="nav-link" target="_blank">ブログ(日本語訳)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">ジョブ(海外)</a></li>
+    </ul></li>
+    <li><h4>リソースリスト</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">公式レポジトリ</a></li>
+      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Vue Curated</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">チーム</a>
+</li>
+<li>
+  <a href="/contribution/" class="nav-link">貢献</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a class="nav-link">Vue を支援する</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">ショップ</a></li>
+      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">OpenCollective で支援する</a></li>
+      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">Patreon で Evan を支援する</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">言語</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://cn.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">中文</a></li>
+    <li><a href="https://ru.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">한국어</a></li>
+    <li><a href="https://br.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+      <div class="main-sponsor">
+        <span>プラチナスポンサー</span><br>
+        <a href="https://stdlib.com" target="_blank" class="logo">
+          <img src="/images/stdlib.png">
+        </a>
+        <a href="http://tooltwist.com/" target="_blank" class="logo">
+          <img src="/images/tooltwist.png">
+        </a>
+      </div>
+      <a class="become-backer" href="/support-vuejs">
+        スポンサーになる
+      </a>
+      <h2>
+        
+          スタイルガイド<sup class="beta">beta</sup>
+        
+        
+      </h2>
+      <ul class="menu-root">
+  
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content style-guide with-sidebar ">
+  
+    
+      <div id="ad">
+  <script>
+    (function () {
+      var s = document.createElement('script')
+      s.setAttribute('async', '')
+      s.src = '//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs'
+      s.id = '_carbonads_js'
+      document.getElementById('ad').appendChild(s)
+    })()
+  </script>
+</div>
+
+    
+  
+  
+  <p class="updated">最終更新日: 2017年11月8日</p>
+  
+  <h1 id="スタイルガイド-beta"><a href="#スタイルガイド-beta" class="headerlink" title="スタイルガイド beta"></a>スタイルガイド <sup class="beta">beta</sup></h1><p>このドキュメントは、 Vue 固有の記法についての公式なスタイルガイドです。もしあなたがプロジェクトにおいて Vue を使用する場合は、エラーや有益でない議論、アンチパターンを避けるための参考となります。しかし、スタイルガイドはすべてのチームやプロジェクトで理想とは限らないと考えていますので、過去の経験や、周囲の技術スタック、個人の価値観に基づいた上で必要に応じて慎重に逸脱することが推奨されます。</p>
+<p>ほとんどのパートにおいて、基本的に JavaScript や HTML に対する提案はさけています。セミコロンやカンマの使用の是非はどちらでも良いです。 HTML の属性に対してシングルクォートかダブルクォートどちらかを利用するかもどちらでも良いです。しかし、特定のパターンにおいて Vue のコンテキストが役立つと判明した場合については、その限りではありません。</p>
+<blockquote>
+<p><strong>近々、実施のヒントを提供予定です。</strong> スタイルガイドについて、必要に応じて自身で実施しなければならない場所もありますが、可能な限り ESLint やその他自動化されたプロセスを用いて、より簡単に行う方法を明示します。</p>
+</blockquote>
+<p>最後に、私たちはルール群を 4 つのカテゴリに分割しました:</p>
+<h2 id="ルールカテゴリ"><a href="#ルールカテゴリ" class="headerlink" title="ルールカテゴリ"></a>ルールカテゴリ</h2><h3 id="優先度-A-必須"><a href="#優先度-A-必須" class="headerlink" title="優先度 A: 必須"></a>優先度 A: 必須</h3><p>これらのルールは、エラー防止に役立ちます。ですので、学び、遵守してください。例外は存在するかもしれませんが、それらは極めて稀で、かつ JavaScript と Vue の両方の専門知識を持った人によってのみ作られるべきです。</p>
+<h3 id="優先度-B-強く推奨"><a href="#優先度-B-強く推奨" class="headerlink" title="優先度 B: 強く推奨"></a>優先度 B: 強く推奨</h3><p>これらのルールは、ほとんどのプロジェクトで読みやすさや開発者の体験をよりよくするために見いだされました。これらに違反してもあなたのコードは動きますが、ごくまれなケースで、かつちゃんと正当を示した上でのみ違反するようにすべきです。</p>
+<h3 id="優先度-C-推奨"><a href="#優先度-C-推奨" class="headerlink" title="優先度 C: 推奨"></a>優先度 C: 推奨</h3><p>同じくらい良いオプションが複数ある場合､一貫性を確保するために任意の選択をすることができます｡これらのルールでは､それぞれ許容可能なオプションを説明し､既定の選択を提案します｡つまり､一貫性があり､良い理由を持ち続ける限り､独自のコードベースで自由に異なる選択肢を作ることができます｡ですが､良い理由はあるのでしょうか！コミュニティの標準に合わせることで､あなたは:</p>
+<ol>
+<li>直面するコミュニティのコードを容易に理解できるように脳を慣れさせます｡</li>
+<li>ほとんどのコミュニティのコードサンプルを変更なしにコピーして貼り付ける事ができます｡</li>
+<li>少なくとも Vue に関しては､ほとんどの場合､新たな人材はあなたのコーディングスタイルよりも既に慣れ親しんだものを好みます｡</li>
+</ol>
+<h3 id="優先度-D-使用注意"><a href="#優先度-D-使用注意" class="headerlink" title="優先度 D: 使用注意"></a>優先度 D: 使用注意</h3><p>Vue のいくつかの機能は、レアケースまたは従来のコードベースからスムーズな移行に対応するために存在します。しかしながら、これを使いすぎると、コードを保守することが難しくなり、またバグの原因になることさえあります。これらのルールは潜在的な危険な機能を照らし、いつ、なぜ避けなかればならないのかを説明しています。</p>
+<h2 id="優先度-A-ルール-必須-エラー防止"><a href="#優先度-A-ルール-必須-エラー防止" class="headerlink" title="優先度 A ルール: 必須 (エラー防止)"></a>優先度 A ルール: 必須 (エラー防止)</h2><h3 id="複数単語コンポーネント名-必須"><a href="#複数単語コンポーネント名-必須" class="headerlink" title="複数単語コンポーネント名 必須"></a>複数単語コンポーネント名 <sup data-p="a">必須</sup></h3><p><strong>ルートの <code>App</code> コンポーネントを除き、コンポーネント名は常に複数単語とするべきです。</strong></p>
+<p>これは、全ての HTML 要素は 1 単語となっているというこれまでの経緯から、既に存在する、そして将来定義される HTML 要素との<a href="http://w3c.github.io/webcomponents/spec/custom/#valid-custom-element-name" target="_blank" rel="external">衝突を防止します</a>。</p>
+<div class="style-example example-bad">
+<h4 id="悪い例"><a href="#悪い例" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'todo'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  name: <span class="string">'Todo'</span>,</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例"><a href="#良い例" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'todo-item'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  name: <span class="string">'TodoItem'</span>,</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div>
+<h3 id="コンポーネントのデータ-必須"><a href="#コンポーネントのデータ-必須" class="headerlink" title="コンポーネントのデータ 必須"></a>コンポーネントのデータ <sup data-p="a">必須</sup></h3><p><strong>コンポーネントの <code>data</code> は関数でなければなりません。</strong></p>
+<p>コンポーネントで <code>data</code> プロパティを使用する際 (つまり <code>new Vue</code> 以外のどこでも)、その値はオブジェクトを返す関数でなければなりません。</p>
+
+<details>
+<summary>
+  <h4>詳細な説明</h4>
+</summary>
+
+<p><code>data</code> の値がオブジェクトの時、それはコンポーネントの全てのインスタンスで共有されます。例として、このデータを持つ <code>TodoList</code> コンポーネントを想像してみましょう:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: &#123;</div><div class="line">  listTitle: <span class="string">''</span>,</div><div class="line">  todos: []</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>私たちは、ユーザーが複数のリスト(例えば 買い物、ウィッシュリスト、毎日の仕事など)を管理できるように、このコンポーネントを再利用したいかもしれません。しかし問題があります。コンポーネントの全てのインスタンスが同じデータオブジェクトを参照しているので、1つのリストのタイトルを変えることは、他の全てのリストのタイトルを変えることになるでしょう。1つの todo を追加/編集/削除する場合も同様です。</p>
+<p>代わりに、各コンポーネントのインスタンスにはそれ自身のデータだけを管理してもらいたいです。そのためには、各インスタンスは一意のデータオブジェクトを生成しなければなりません。 JavaScript において、それは関数内でオブジェクトを返すことにより達成されます。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    listTitle: <span class="string">''</span>,</div><div class="line">    todos: []</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</details>
+<div class="style-example example-bad">
+<h4 id="悪い例-1"><a href="#悪い例-1" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'some-comp'</span>, &#123;</div><div class="line">  data: &#123;</div><div class="line">    foo: <span class="string">'bar'</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  data: &#123;</div><div class="line">    foo: <span class="string">'bar'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-1"><a href="#良い例-1" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'some-comp'</span>, &#123;</div><div class="line">  data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      foo: <span class="string">'bar'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// .vue ファイル内</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  data () &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      foo: <span class="string">'bar'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// ルートで直接オブジェクトを使うのは OK です</span></div><div class="line"><span class="comment">// なぜなら Vue インスタンスはずっと存在する唯一のインスタンスだからです</span></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  data: &#123;</div><div class="line">    foo: <span class="string">'bar'</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</div>
+<h3 id="プロパティの定義-必須"><a href="#プロパティの定義-必須" class="headerlink" title="プロパティの定義 必須"></a>プロパティの定義 <sup data-p="a">必須</sup></h3><p><strong>プロパティの定義はできる限り詳細とするべきです。</strong></p>
+<p>コミットされたコード内で、プロパティの定義は常に少なくとも1つのタイプを指定し、できる限り詳細とするべきです。</p>
+
+<details>
+<summary>
+  <h4>詳細な説明</h4>
+</summary>
+
+<p>詳細な <a href="https://vuejs.org/v2/guide/components.html#Prop-Validation">プロパティの定義</a> には2つの利点があります:</p>
+<ul>
+<li>それらはコンポーネントの API を記録するため、そのコンポーネントの使用方法が簡単に分かります。</li>
+<li>開発中にもしコンポーネントに対して誤った設定のプロパティが提供されたら、 Vue はあなたに警告します。それは潜在的なエラー原因の検知に役立ちます。</li>
+</ul>
+</details>
+<div class="style-example example-bad">
+<h4 id="悪い例-2"><a href="#悪い例-2" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// プロトタイピングの時だけ OK</span></div><div class="line">props: [<span class="string">'status'</span>]</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-2"><a href="#良い例-2" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">props: &#123;</div><div class="line">  status: <span class="built_in">String</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// さらに良いです!</span></div><div class="line">props: &#123;</div><div class="line">  status: &#123;</div><div class="line">    type: <span class="built_in">String</span>,</div><div class="line">    required: <span class="literal">true</span>,</div><div class="line">    validator: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> [</div><div class="line">        <span class="string">'syncing'</span>,</div><div class="line">        <span class="string">'synced'</span>,</div><div class="line">        <span class="string">'version-conflict'</span>,</div><div class="line">        <span class="string">'error'</span></div><div class="line">      ].indexOf(value) !== <span class="number">-1</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div>
+<h3 id="キー付き-v-for-必須"><a href="#キー付き-v-for-必須" class="headerlink" title="キー付き v-for 必須"></a>キー付き <code>v-for</code> <sup data-p="a">必須</sup></h3><p><strong>常に <code>v-for</code> に対しては <code>key</code> を使用してください。</strong></p>
+<p>サブツリー下に内部コンポーネントの状態を維持するために <code>v-for</code> に <code>key</code> は <em>常に</em> コンポーネントに必要です。それが要素の場合においても、 アニメーションにおける <a href="https://bost.ocks.org/mike/constancy/" target="_blank" rel="external">オブジェクトの一貫性</a> のような予測可能な振る舞いを維持するためには良い手法でしょう。</p>
+
+<details>
+<summary>
+  <h4>詳細な説明</h4>
+</summary>
+
+<p>TODO リストを持っているとしましょう:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    todos: [</div><div class="line">      &#123;</div><div class="line">        id: <span class="number">1</span>,</div><div class="line">        text: <span class="string">'Learn to use v-for'</span></div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        id: <span class="number">2</span>,</div><div class="line">        text: <span class="string">'Learn to use key'</span></div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>アルファベット順に並べ替えます。 DOM を更新する時、 Vue はできる限りコストをかけずに DOM 変化を実行するために描画を最適化します。それは、最初の todo 要素を削除してから、それを再びリストの最後に加えることを意味します。</p>
+<p>問題は、 DOM に残る要素を削除しないことが重要な場合があることです。例えば、リストの並び替えに <code>&lt;transition-group&gt;</code> を使いたいかもしれないですし、描画された要素が <code>&lt;input&gt;</code> の場合は、フォーカスを維持したいかもしれません。このような場合には、各アイテムに対して一意のキー (つまり <code>:key=&quot;todo.id&quot;</code> ) を与えることによって、 Vue により予測可能な振る舞いを伝えることができます。</p>
+<p>私たちの経験では、 <em>常に</em> 一意のキーを与える方が良いので、あなたやあなたのチームはこれらのエッジケースについて心配する必要はありません。稀に、オブジェクトの一貫性が必要とされないパフォーマンスが重要なシナリオにおいては、意識的に例外を作ることはできます。</p>
+</details>
+<div class="style-example example-bad">
+<h4 id="悪い例-3"><a href="#悪い例-3" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span>&gt;</span></div><div class="line">    &#123;&#123; todo.text &#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-3"><a href="#良い例-3" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span></span></div><div class="line"><span class="tag">    <span class="attr">v-for</span>=<span class="string">"todo in todos"</span></span></div><div class="line"><span class="tag">    <span class="attr">:key</span>=<span class="string">"todo.id"</span></span></div><div class="line"><span class="tag">  &gt;</span></div><div class="line">    &#123;&#123; todo.text &#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<h3 id="コンポーネントスタイルのスコープ-必須"><a href="#コンポーネントスタイルのスコープ-必須" class="headerlink" title="コンポーネントスタイルのスコープ 必須"></a>コンポーネントスタイルのスコープ <sup data-p="a">必須</sup></h3><p><strong>アプリケーションにとって、トップレベルの <code>App</code> コンポーネントとレイアウトコンポーネント内のスタイルはグローバルかもしれませんが、他のすべてのコンポーネントは常にスコープされているべきです。</strong></p>
+<p>これは<a href="../guide/single-file-components.html">単一ファイルコンポーネント</a>にのみ関係します。 <a href="https://vue-loader.vuejs.org/en/features/scoped-css.html" target="_blank" rel="external"><code>scoped</code> 属性</a>の使用は必須<em>ではありません</em>。スコープは <a href="https://vue-loader.vuejs.org/en/features/css-modules.html" target="_blank" rel="external">CSS modules</a> 、 <a href="http://getbem.com/" target="_blank" rel="external">BEM</a> のようなクラスに基づいた戦略、あるいは他のライブラリや慣例を介して行うことができます。</p>
+<p><strong>しかしながら、コンポーネントライブラリでは <code>scoped</code> 属性を使用する代わりに、クラスに基づいた戦略の方がむしろ好ましいです。</strong></p>
+<p>これは内部スタイルの上書きを容易にし、人間が読みやすいクラス名は高い詳細度を持ちませんが、しかし依然として衝突する可能性はほとんどありません。</p>
+
+<details>
+<summary>
+  <h4>詳細な説明</h4>
+</summary>
+
+<p>もしあなたが、他の開発者と一緒に、あるいは時々サードパーティ(例えば Auth0 から)の HTML/CSS を含んだりする大きなプロジェクトを開発しているのなら、一貫したスコープは意図されたコンポーネントだけにあなたのスタイルを適用することを保証します。</p>
+<p><code>scoped</code> 属性を超えて、一意のクラス名を使うことはサードパーティの CSS があなたの HTML に適用されないことを保証するのに役立ちます。 例えば、多くのプロジェクトは <code>button</code> 、 <code>btn</code> 、 や <code>icon</code> のようなクラス名を使っているので、たとえ BEM のような戦略を使わなくても、アプリケーション固有 かつ/あるいは コンポーネント固有のプレフィックス(例 <code>ButtonClose-icon</code> )を付与することはいくらかの防御になります。</p>
+</details>
+<div class="style-example example-bad">
+<h4 id="悪い例-4"><a href="#悪い例-4" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-close"</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css"><span class="selector-class">.btn-close</span> &#123;</span></div><div class="line"><span class="undefined">  background-color: red;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-4"><a href="#良い例-4" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"button button-close"</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- `scoped` を使用 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css"><span class="selector-class">.button</span> &#123;</span></div><div class="line"><span class="undefined">  border: none;</span></div><div class="line"><span class="undefined">  border-radius: 2px;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="css"><span class="selector-class">.button-close</span> &#123;</span></div><div class="line"><span class="undefined">  background-color: red;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">:class</span>=<span class="string">"[$style.button, $style.buttonClose]"</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- CSS modules を使用 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">module</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css"><span class="selector-class">.button</span> &#123;</span></div><div class="line"><span class="undefined">  border: none;</span></div><div class="line"><span class="undefined">  border-radius: 2px;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="css"><span class="selector-class">.buttonClose</span> &#123;</span></div><div class="line"><span class="undefined">  background-color: red;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"c-Button c-Button--close"</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- BEM の慣例を使用 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css"><span class="selector-class">.c-Button</span> &#123;</span></div><div class="line"><span class="undefined">  border: none;</span></div><div class="line"><span class="undefined">  border-radius: 2px;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="css"><span class="selector-class">.c-Button--close</span> &#123;</span></div><div class="line"><span class="undefined">  background-color: red;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<h3 id="プライベートなプロパティ名-必須"><a href="#プライベートなプロパティ名-必須" class="headerlink" title="プライベートなプロパティ名 必須"></a>プライベートなプロパティ名 <sup data-p="a">必須</sup></h3><p><strong>プラグインやミックスイン、その他におけるプライベートなカスタムプロパティには常に <code>$_</code> プレフィックスを使用してください。そうすることにより名前付きのスコープを含み (例 <code>$_yourPluginName_</code> )、他の著者によるコードとの衝突を避けることができます。</strong></p>
+
+<details>
+<summary>
+  <h4>詳細な説明</h4>
+</summary>
+
+<p>Vue は、それ自体のプライベートなプロパティを定義するために <code>_</code> プレフィックスを使用しているので、同じプレフィックス(例 <code>_update</code> )を使用することはインスタンスのプロパティを上書きする危険があります。たとえ Vue が現在特定のプロパティ名を使用していないことを確認するとしても、後のバージョンで衝突が起きないという保証はありません。</p>
+<p><code>$</code> プレフィックスについて、 Vue のエコシステム間でのその目的はユーザーに公開される特別なインスタンスのプロパティなので、それを <em>プライベートな</em>プロパティに対して使用するのは適切ではありません。</p>
+<p>代わりに、 Vue と衝突しないユーザー定義されたプライベートなプロパティの慣例として、2つのプレフィックスを組み合わせて <code>$_</code> にすることを推奨します。</p>
+</details>
+<div class="style-example example-bad">
+<h4 id="悪い例-5"><a href="#悪い例-5" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myGreatMixin = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  methods: &#123;</div><div class="line">    update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// ...</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myGreatMixin = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  methods: &#123;</div><div class="line">    _update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// ...</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myGreatMixin = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  methods: &#123;</div><div class="line">    $update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// ...</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myGreatMixin = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  methods: &#123;</div><div class="line">    $_update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// ...</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-5"><a href="#良い例-5" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myGreatMixin = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  methods: &#123;</div><div class="line">    $_myGreatMixin_update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// ...</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div>
+<h2 id="優先度B-のルール-強く推奨-読みやすさの向上"><a href="#優先度B-のルール-強く推奨-読みやすさの向上" class="headerlink" title="優先度B のルール: 強く推奨 (読みやすさの向上)"></a>優先度B のルール: 強く推奨 (読みやすさの向上)</h2><h3 id="コンポーネントのファイル-強く推奨"><a href="#コンポーネントのファイル-強く推奨" class="headerlink" title="コンポーネントのファイル 強く推奨"></a>コンポーネントのファイル <sup data-p="b">強く推奨</sup></h3><p><strong>ファイルを結合してくれるビルドシステムがあったとしても、各コンポーネントはそれぞれ別のファイルに書くべきです。</strong></p>
+<p>そうすれば、コンポーネントを編集したり使い方を確認するときにより素早く見つけることができます。</p>
+<div class="style-example example-bad">
+<h4 id="悪い例-6"><a href="#悪い例-6" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'TodoList'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line">Vue.component(<span class="string">'TodoItem'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-6"><a href="#良い例-6" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- TodoList.js</div><div class="line">|- TodoItem.js</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- TodoList.vue</div><div class="line">|- TodoItem.vue</div></pre></td></tr></table></figure>
+</div>
+<h3 id="単一ファイルコンポーネントのファイル名の形式-強く推奨"><a href="#単一ファイルコンポーネントのファイル名の形式-強く推奨" class="headerlink" title="単一ファイルコンポーネントのファイル名の形式 強く推奨"></a>単一ファイルコンポーネントのファイル名の形式 <sup data-p="b">強く推奨</sup></h3><p><strong><a href="../guide/single-file-components.html">単一ファイルコンポーネント</a> のファイル名は、すべてパスカルケース (PascalCase) にするか、すべてケバブケース (kebab-case) にするべきです。</strong></p>
+<p>パスカルケースは、JS(X) やテンプレートの中でコンポーネントを参照する方法と一致しているので、コードエディタ上でオートコンプリートが可能な場合はとてもうまく働きます。しかし、大文字と小文字が混ざったファイル名は、大文字と小文字を区別しないファイルシステム上で時々問題を起こす可能性があります。そのため、ケバブケースもまた完全に受け入れられています。</p>
+<div class="style-example example-bad">
+<h4 id="悪い例-7"><a href="#悪い例-7" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- mycomponent.vue</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- myComponent.vue</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-7"><a href="#良い例-7" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- MyComponent.vue</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- my-component.vue</div></pre></td></tr></table></figure>
+</div>
+<h3 id="基底コンポーネントの名前-強く推奨"><a href="#基底コンポーネントの名前-強く推奨" class="headerlink" title="基底コンポーネントの名前 強く推奨"></a>基底コンポーネントの名前 <sup data-p="b">強く推奨</sup></h3><p><strong>アプリケーション特有のスタイルやルールを適用する基底コンポーネント (またはプレゼンテーションコンポーネント: Presentation Components、ダムコンポーネント: Dumb Components、純粋コンポーネント: Pure Components とも) は、すべて <code>Base</code> 、 <code>App</code> 、<code>V</code> などの固有のプレフィックスで始まるべきです。</strong></p>
+
+<details>
+<summary>
+  <h4>詳細な説明</h4>
+</summary>
+
+<p>これらのコンポーネントは、あなたのアプリケーションに一貫したスタイルやふるまいをもたせる基礎として位置づけられます。これらは、おそらく以下のもの <strong>だけ</strong> を含むでしょう:</p>
+<ul>
+<li>HTML 要素、</li>
+<li><code>Base</code> で始まる別のコンポーネント、そして</li>
+<li>サードパーティ製の UI コンポーネント</li>
+</ul>
+<p>これらのコンポーネントの名前は、しばしばラップしている要素の名前を含みます(例えば <code>BaseButton</code> 、 <code>BaseTable</code>)。それ特有の目的のための要素がない場合は別ですが(例えば <code>BaseIcon</code>)。もっと特定の用途に向けた同じようなコンポーネントを作る時は、ほとんどすべての場合にこれらのコンポーネントを使うことになるでしょう。(例えば <code>BaseButton</code> を <code>ButtonSubmit</code> で使うなど)</p>
+<p>このルールの長所:</p>
+<ul>
+<li><p>エディタ上でアルファベット順に並べられた時に、アプリケーションの基底コンポーネントはすべて一緒にリストされ、識別しやすくなります。</p>
+</li>
+<li><p>コンポーネントの名前は常に複数単語にするべきなので、このルールによってシンプルなコンポーネントラッパーに勝手なプレフィックスを選ばなければならない(例えば <code>MyButton</code> 、 <code>VueButton</code>)ということがなくなります。</p>
+</li>
+<li><p>これらのコンポーネントはとても頻繁に使われるので、あらゆる場所で import するよりも単純にグローバルにしてしまいたいと思うかもしれません。プレフィックスによって、それを Webpack でできるようになります。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> requireComponent = <span class="built_in">require</span>.context(<span class="string">"./src"</span>, <span class="literal">true</span>, /^Base[A-Z]/)</div><div class="line">requireComponent.keys().forEach(<span class="function"><span class="keyword">function</span> (<span class="params">fileName</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> baseComponentConfig = requireComponent(fileName)</div><div class="line">  baseComponentConfig = baseComponentConfig.default || baseComponentConfig</div><div class="line">  <span class="keyword">var</span> baseComponentName = baseComponentConfig.name || (</div><div class="line">    fileName</div><div class="line">      .replace(<span class="regexp">/^.+\//</span>, <span class="string">''</span>)</div><div class="line">      .replace(<span class="regexp">/\.\w+$/</span>, <span class="string">''</span>)</div><div class="line">  )</div><div class="line">  Vue.component(baseComponentName, baseComponentConfig)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</details>
+<div class="style-example example-bad">
+<h4 id="悪い例-8"><a href="#悪い例-8" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- MyButton.vue</div><div class="line">|- VueTable.vue</div><div class="line">|- Icon.vue</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-8"><a href="#良い例-8" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- BaseButton.vue</div><div class="line">|- BaseTable.vue</div><div class="line">|- BaseIcon.vue</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- AppButton.vue</div><div class="line">|- AppTable.vue</div><div class="line">|- AppIcon.vue</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- VButton.vue</div><div class="line">|- VTable.vue</div><div class="line">|- VIcon.vue</div></pre></td></tr></table></figure>
+</div>
+<h3 id="単一インスタンスのコンポーネント名-強く推奨"><a href="#単一インスタンスのコンポーネント名-強く推奨" class="headerlink" title="単一インスタンスのコンポーネント名 強く推奨"></a>単一インスタンスのコンポーネント名 <sup data-p="b">強く推奨</sup></h3><p><strong>常に 1 つのアクティブなインスタンスしか持たないコンポーネントは、1 つしか存在しえないことを示すために <code>The</code> というプレフィックスで始めるべきです。</strong></p>
+<p>これはそのコンポーネントが 1 つのページでしか使われないということを意味するのではなく、 <em>ページごとに</em>  1 回しか使われないという意味です。これらのコンポーネントは、アプリケーション内のコンテキストではなく、アプリケーションに対して固有のため、決してプロパティを受け入れることはありません。もしプロパティを追加する必要があることに気づいたのなら、それは <em>現時点で</em> ページごとに 1 回しか使われていないだけで、実際には再利用可能なコンポーネントだということを示すよい目印です。</p>
+<div class="style-example example-bad">
+<h4 id="悪い例-9"><a href="#悪い例-9" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- Heading.vue</div><div class="line">|- MySidebar.vue</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-9"><a href="#良い例-9" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- TheHeading.vue</div><div class="line">|- TheSidebar.vue</div></pre></td></tr></table></figure>
+</div>
+<h3 id="密結合コンポーネントの名前-強く推奨"><a href="#密結合コンポーネントの名前-強く推奨" class="headerlink" title="密結合コンポーネントの名前 強く推奨"></a>密結合コンポーネントの名前 <sup data-p="b">強く推奨</sup></h3><p><strong>親コンポーネントと密結合した子コンポーネントには、親コンポーネントの名前をプレフィックスとして含むべきです。</strong></p>
+<p>もし、コンポーネントが単一の親コンポーネントの中でだけ意味をもつものなら、その関連性は名前からはっきりわかるようにするべきです。一般的にエディタはファイルをアルファベット順に並べるので、関連をもつものどうしが常に隣り合って並ぶことにもなります。</p>
+
+<details>
+<summary>
+  <h4>詳細な説明</h4>
+</summary>
+
+<p>この問題を、子コンポーネントを親コンポーネントの名前を元に命名したディレクトリの中に入れることで解決したいと思うかもしれません。<br>例えば:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- TodoList/</div><div class="line">   |- Item/</div><div class="line">      |- index.vue</div><div class="line">      |- Button.vue</div><div class="line">   |- index.vue</div></pre></td></tr></table></figure>
+<p>もしくは:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- TodoList/</div><div class="line">   |- Item/</div><div class="line">      |- Button.vue</div><div class="line">   |- Item.vue</div><div class="line">|- TodoList.vue</div></pre></td></tr></table></figure>
+<p>これは推奨されません。以下のような結果を生むからです:</p>
+<ul>
+<li>同じような名前のファイルがたくさんできてしまい、コードエディタ上で素早くファイルを切り替えるのが難しくなります。</li>
+<li>ネストしたサブディレクトリがたくさんできてしまい、エディタのサイドバーでコンポーネントを参照するのに時間がかかるようになります。</li>
+</ul>
+</details>
+<div class="style-example example-bad">
+<h4 id="悪い例-10"><a href="#悪い例-10" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- TodoList.vue</div><div class="line">|- TodoItem.vue</div><div class="line">|- TodoButton.vue</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- SearchSidebar.vue</div><div class="line">|- NavigationForSearchSidebar.vue</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-10"><a href="#良い例-10" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- TodoList.vue</div><div class="line">|- TodoListItem.vue</div><div class="line">|- TodoListItemButton.vue</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- SearchSidebar.vue</div><div class="line">|- SearchSidebarNavigation.vue</div></pre></td></tr></table></figure>
+</div>
+<h3 id="コンポーネント名における単語の順番-強く推奨"><a href="#コンポーネント名における単語の順番-強く推奨" class="headerlink" title="コンポーネント名における単語の順番 強く推奨"></a>コンポーネント名における単語の順番 <sup data-p="b">強く推奨</sup></h3><p><strong>コンポーネント名は、最高レベルの(たいていは最も一般的な)単語から始めて、説明的な修飾語で終わるべきです。</strong></p>
+
+<details>
+<summary>
+  <h4>詳細な説明</h4>
+</summary>
+
+<p>あなたは疑問に思うかもしれません:</p>
+<blockquote>
+<p>“なぜコンポーネント名に自然な言語でないものを使うように強制するのですか？”</p>
+</blockquote>
+<p>自然な英語では、形容詞やその他の記述子は一般的に名詞の前に置かれ、そうでない場合には接続詞が必要になります。例えば:</p>
+<ul>
+<li>Coffee <em>with</em> milk</li>
+<li>Soup <em>of the</em> day</li>
+<li>Visitor <em>to the</em> museum</li>
+</ul>
+<p>もちろん、あなたがそうしたいのならば、これらの接続詞をコンポーネント名に含めても構いませんが、それでも順番は重要です。</p>
+<p>また、 <strong>何を「最高レベル」として尊重するかがアプリケーションの文脈になる</strong> ことに注意してください。<br>例えば、検索フォームを持ったアプリケーションを想像してください。こんなコンポーネントがあるかもしれません:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- ClearSearchButton.vue</div><div class="line">|- ExcludeFromSearchInput.vue</div><div class="line">|- LaunchOnStartupCheckbox.vue</div><div class="line">|- RunSearchButton.vue</div><div class="line">|- SearchInput.vue</div><div class="line">|- TermsCheckbox.vue</div></pre></td></tr></table></figure>
+<p>あなたも気づいたと思いますが、これではどのコンポーネントが検索に特有のものなのかとても分かりづらいです。では、このルールに従ってコンポーネントの名前を変えてみましょう。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- SearchButtonClear.vue</div><div class="line">|- SearchButtonRun.vue</div><div class="line">|- SearchInputExcludeGlob.vue</div><div class="line">|- SearchInputQuery.vue</div><div class="line">|- SettingsCheckboxLaunchOnStartup.vue</div><div class="line">|- SettingsCheckboxTerms.vue</div></pre></td></tr></table></figure>
+<p>一般的にエディタではファイルはアルファベット順に並ぶので、コンポーネント間のあらゆる重要な関連性はひと目ではっきりと分かります。</p>
+<p>あなたは、これを別の方法で解決したいと思うかもしれません。つまり、すべての検索コンポーネントは search ディレクトリの下に、すべての設定コンポーネントは settings ディレクトリの下にネストするという方法です。以下の理由から、とても大規模なアプリケーション(例えば 100 以上のコンポーネントがあるような)の場合に限ってこのアプローチを考慮することを推奨します:</p>
+<ul>
+<li>一般的に、入れ子のサブディレクトリの中を移動するのは、単一の components ディレクトリをスクロールするのと比べて余分に時間がかかります。</li>
+</ul>
+</details>
+<div class="style-example example-bad">
+<h4 id="悪い例-11"><a href="#悪い例-11" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- ClearSearchButton.vue</div><div class="line">|- ExcludeFromSearchInput.vue</div><div class="line">|- LaunchOnStartupCheckbox.vue</div><div class="line">|- RunSearchButton.vue</div><div class="line">|- SearchInput.vue</div><div class="line">|- TermsCheckbox.vue</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-11"><a href="#良い例-11" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- SearchButtonClear.vue</div><div class="line">|- SearchButtonRun.vue</div><div class="line">|- SearchInputQuery.vue</div><div class="line">|- SearchInputExcludeGlob.vue</div><div class="line">|- SettingsCheckboxTerms.vue</div><div class="line">|- SettingsCheckboxLaunchOnStartup.vue</div></pre></td></tr></table></figure>
+</div>
+<h3 id="自己終了形式のコンポーネント-強く推奨"><a href="#自己終了形式のコンポーネント-強く推奨" class="headerlink" title="自己終了形式のコンポーネント 強く推奨"></a>自己終了形式のコンポーネント <sup data-p="b">強く推奨</sup></h3><p><strong>中身を持たないコンポーネントは、 <a href="../guide/single-file-components.html">単一ファイルコンポーネント</a> 、文字列テンプレート、および <a href="render-function.html#JSX">JSX</a> の中では自己終了形式で書くべきです。ただし、DOM テンプレート内ではそうしてはいけません。</strong></p>
+<p>自己終了形式のコンポーネントは、単に中身を持たないというだけでなく、中身を持たないことを <strong>意図したものだ</strong> ということをはっきりと表現します。本の中にある白紙のページと、「このページは意図的に白紙のままにしています」と書かれたページとは違うということです。また、不要な閉じタグがなくなることによってあなたのコードはより読みやすくなります。</p>
+<p>残念ながら、HTML はカスタム要素の自己終了形式を許していません。<a href="https://www.w3.org/TR/html/syntax.html#void-elements" target="_blank" rel="external">公式の「空」要素</a> だけです。これが、Vue のテンプレートコンパイラが DOM よりも先にテンプレートにアクセスして、その後 DOM の仕様に準拠した HTML を出力することができる場合にだけこの方策を使うことができる理由です。</p>
+<div class="style-example example-bad">
+<h4 id="悪い例-12"><a href="#悪い例-12" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 単一ファイルコンポーネント、文字列テンプレート、JSX の中 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">MyComponent</span>&gt;</span><span class="tag">&lt;/<span class="name">MyComponent</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- DOM テンプレートの中 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span>/&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-12"><a href="#良い例-12" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 単一ファイルコンポーネント、文字列テンプレート、JSX の中 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">MyComponent</span>/&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- DOM テンプレートの中 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<h3 id="テンプレート内でのコンポーネント名の形式強く推奨"><a href="#テンプレート内でのコンポーネント名の形式強く推奨" class="headerlink" title="テンプレート内でのコンポーネント名の形式強く推奨"></a>テンプレート内でのコンポーネント名の形式<sup data-p="b">強く推奨</sup></h3><p><strong>ほとんどのプロジェクトでは、コンポーネント名は <a href="../guide/single-file-components.html">単一ファイルコンポーネント</a> と文字列テンプレートの中では常にパスカルケース(PascalCase)になるべきです。 - しかし、 DOM テンプレートの中ではケバブケース(kebab-case)です。</strong></p>
+<p>パスカルケースには、ケバブケースよりも優れた点がいくつかあります:</p>
+<ul>
+<li>パスカルケースは JavaScript でも使われるので、エディタがテンプレート内のコンポーネント名を自動補完できます。</li>
+<li><code>&lt;MyComponent&gt;</code> は <code>&lt;my-component&gt;</code> よりも一単語の HTML 要素との見分けがつきやすいです。なぜなら、ハイフン 1 文字だけの違いではなく 2 文字(2 つの大文字) の違いがあるからです。</li>
+<li>もし、テンプレート内で、例えば Web コンポーネントのような Vue 以外のカスタム要素を使っていたとしても、パスカルケースは Vue コンポーネントがはっきりと目立ったせることを保証します。</li>
+</ul>
+<p>残念ですが、HTML は大文字と小文字を区別しないので、DOM テンプレートの中ではまだケバブケースを使う必要があります。</p>
+<p>ただし、もしあなたが既にケバブケースを大量に使っているのなら、HTML の慣習との一貫性を保ちすべてのあなたのプロジェクトで同じ型式を使えるようにすることはおそらく上にあげた利点よりも重要です。このような状況では、 <strong>どこでもケバブケースを使うのもアリです。</strong></p>
+<div class="style-example example-bad">
+<h4 id="悪い例-13"><a href="#悪い例-13" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 単一ファイルコンポーネント、文字列テンプレートの中 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">mycomponent</span>/&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 単一ファイルコンポーネント、文字列テンプレートの中 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">myComponent</span>/&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- DOM テンプレートの中 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">MyComponent</span>&gt;</span><span class="tag">&lt;/<span class="name">MyComponent</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-13"><a href="#良い例-13" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 単一ファイルコンポーネント、文字列テンプレートの中 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">MyComponent</span>/&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- DOM テンプレートの中 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>または</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- どこでも --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<h3 id="JS-JSX-内でのコンポーネント名の形式-強く推奨"><a href="#JS-JSX-内でのコンポーネント名の形式-強く推奨" class="headerlink" title="JS/JSX 内でのコンポーネント名の形式 強く推奨"></a>JS/JSX 内でのコンポーネント名の形式 <sup data-p="b">強く推奨</sup></h3><p><strong>JS/<a href="../guide/render-function.html#JSX">JSX</a> 内でのコンポーネント名はつねにパスカルケース(PascalCase)にするべきです。ただし、 <code>Vue.component</code> で登録したグローバルコンポーネントしか使わないような単純なアプリケーションでは、ケバブケース(kebab-case)を含む文字列になるかもしれません。</strong></p>
+
+<details>
+<summary>
+  <h4>詳細な説明</h4>
+</summary>
+
+<p>JavaScript では、クラスやプロトタイプのコンストラクタは - 原則として異なるインスタンスを持ちうるものはすべて- パスカルケースにするのがしきたりです。Vue コンポーネントもインスタンスをもつので、同じようにパスカルケースにするのが理にかなっています。さらなる利点として、JSX(とテンプレート)の中でパスカルケースを使うことによって、コードを読む人がコンポーネントと HTML 要素をより簡単に見分けられるようになります。</p>
+<p>しかし、<code>Vue.component</code> によるグローバルコンポーネント定義 <strong>だけ</strong> を使うアプリケーションでは、代わりにケバブケースを使うことを推奨します。理由は以下の通りです:</p>
+<ul>
+<li>グローバルコンポーネントを JavaScript から参照することはほとんどないので、 JavaScript の原則に従う意味もほとんどありません。</li>
+<li>そのようなアプリケーションはたくさんの DOM 内テンプレート をもつのが常ですが、 そこでは ケバブケースを <a href="#テンプレート内でのコンポーネント名の形式-強く推奨"><strong>必ず</strong> 使う必要があります</a></li>
+</ul>
+</details>
+<div class="style-example example-bad">
+<h4 id="悪い例-14"><a href="#悪い例-14" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'myComponent'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> myComponent <span class="keyword">from</span> <span class="string">'./MyComponent.vue'</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  name: <span class="string">'myComponent'</span>,</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  name: <span class="string">'my-component'</span>,</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-14"><a href="#良い例-14" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'MyComponent'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> MyComponent <span class="keyword">from</span> <span class="string">'./MyComponent.vue'</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  name: <span class="string">'MyComponent'</span>,</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div>
+<h3 id="完全な単語によるコンポーネント名-強く推奨"><a href="#完全な単語によるコンポーネント名-強く推奨" class="headerlink" title="完全な単語によるコンポーネント名 強く推奨"></a>完全な単語によるコンポーネント名 <sup data-p="b">強く推奨</sup></h3><p><strong>コンポーネント名には、略語よりも完全な単語を使うべきです。</strong></p>
+<p>長い名前によってもたらされる明快さは非常に貴重ですが、それをタイプする労力はエディタの自動補完によってとても小さくなります。特に、一般的でない略語は常に避けるべきです。</p>
+<div class="style-example example-bad">
+<h4 id="悪い例-15"><a href="#悪い例-15" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- SdSettings.vue</div><div class="line">|- UProfOpts.vue</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-15"><a href="#良い例-15" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">components/</div><div class="line">|- StudentDashboardSettings.vue</div><div class="line">|- UserProfileOptions.vue</div></pre></td></tr></table></figure>
+</div>
+<h3 id="プロパティ名の型式-強く推奨"><a href="#プロパティ名の型式-強く推奨" class="headerlink" title="プロパティ名の型式 強く推奨"></a>プロパティ名の型式 <sup data-p="b">強く推奨</sup></h3><p><strong>プロパティ名は、定義の時は常にキャメルケース(camelCase)にするべきですが、テンプレートや <a href="../guide/render-function.html#JSX">JSX</a> ではケバブケース(kebab-case)にするべきです。</strong></p>
+<p>私たちは単純にこの慣習に従っています。JavaScript の中ではキャメルケースがより自然で、HTML の中ではケバブケースが自然です。</p>
+<div class="style-example example-bad">
+<h4 id="悪い例-16"><a href="#悪い例-16" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">props: &#123;</div><div class="line">  <span class="string">'greeting-text'</span>: <span class="built_in">String</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">WelcomeMessage</span> <span class="attr">greetingText</span>=<span class="string">"hi"</span>/&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-16"><a href="#良い例-16" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">props: &#123;</div><div class="line">  greetingText: <span class="built_in">String</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">WelcomeMessage</span> <span class="attr">greeting-text</span>=<span class="string">"hi"</span>/&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<h3 id="複数の属性をもつ要素-強く推奨"><a href="#複数の属性をもつ要素-強く推奨" class="headerlink" title="複数の属性をもつ要素 強く推奨"></a>複数の属性をもつ要素 <sup data-p="b">強く推奨</sup></h3><p><strong>複数の属性をもつ要素は、1 行に 1 要素ずつ、複数の行にわたって書くべきです。</strong></p>
+<p>JavaScript では、複数のプロパティをもつ要素を複数の行に分けて書くことはよい慣習だと広く考えられています。なぜなら、その方がより読みやすいからです。Vue のテンプレートや <a href="../guide/render-function.html#JSX">JSX</a> も同じように考えることがふさわしいです。</p>
+<div class="style-example example-bad">
+<h4 id="悪い例-17"><a href="#悪い例-17" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://vuejs.org/images/logo.png"</span> <span class="attr">alt</span>=<span class="string">"Vue Logo"</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">MyComponent</span> <span class="attr">foo</span>=<span class="string">"a"</span> <span class="attr">bar</span>=<span class="string">"b"</span> <span class="attr">baz</span>=<span class="string">"c"</span>/&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-17"><a href="#良い例-17" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span></span></div><div class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"https://vuejs.org/images/logo.png"</span></span></div><div class="line"><span class="tag">  <span class="attr">alt</span>=<span class="string">"Vue Logo"</span></span></div><div class="line"><span class="tag">&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">MyComponent</span></span></div><div class="line"><span class="tag">  <span class="attr">foo</span>=<span class="string">"a"</span></span></div><div class="line"><span class="tag">  <span class="attr">bar</span>=<span class="string">"b"</span></span></div><div class="line"><span class="tag">  <span class="attr">baz</span>=<span class="string">"c"</span></span></div><div class="line"><span class="tag">/&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<h3 id="テンプレート内での単純な式-強く推奨"><a href="#テンプレート内での単純な式-強く推奨" class="headerlink" title="テンプレート内での単純な式 強く推奨"></a>テンプレート内での単純な式 <sup data-p="b">強く推奨</sup></h3><p><strong>複雑な式は算出プロパティかメソッドにリファクタリングして、コンポーネントのテンプレートには単純な式だけを含むようにするべきです。</strong></p>
+<p>テンプレート内に複雑な式があると、テンプレートが宣言的ではなくなります。私たちは、 <strong>どのように</strong> その値を算出するかではなく、 <strong>何が</strong> 表示されるべきかを記述するように努力するべきです。また、算出プロパティやメソッドによってコードが再利用できるようになります。</p>
+<div class="style-example example-bad">
+<h4 id="悪い例-18"><a href="#悪い例-18" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line">&#123;&#123;</div><div class="line">  fullName.split(' ').map(function (word) &#123;</div><div class="line">    return word[0].toUpperCase() + word.slice(1)</div><div class="line">  &#125;).join(' ')</div><div class="line">&#125;&#125;</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-18"><a href="#良い例-18" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- テンプレート内 --&gt;</span></div><div class="line">&#123;&#123; normalizedFullName &#125;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 複雑な式を算出プロパティに移動</span></div><div class="line">computed: &#123;</div><div class="line">  normalizedFullName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.fullName.split(<span class="string">' '</span>).map(<span class="function"><span class="keyword">function</span> (<span class="params">word</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> word[<span class="number">0</span>].toUpperCase() + word.slice(<span class="number">1</span>)</div><div class="line">    &#125;).join(<span class="string">' '</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div>
+<h3 id="単純な算出プロパティ-強く推奨"><a href="#単純な算出プロパティ-強く推奨" class="headerlink" title="単純な算出プロパティ 強く推奨"></a>単純な算出プロパティ <sup data-p="b">強く推奨</sup></h3><p><strong>複雑な算出プロパティは、できる限りたくさんの単純なプロパティに分割するべきです。</strong></p>
+
+<details>
+<summary>
+  <h4>詳細な説明</h4>
+</summary>
+
+<p>単純な、よい名前を持つ算出プロパティは:</p>
+<ul>
+<li><p><strong>テストしやすい</strong><br>それぞれの算出プロパティが、依存がとても少ないごく単純な式だけを含む場合、それが正しく動くことを確認するテストを書くことがより簡単になります。</p>
+</li>
+<li><p><strong>読みやすい</strong><br>算出プロパティを単純にするということは、たとえそれが再利用可能ではなかったとしても、それぞれに分かりやすい名前をつけることになります。それによって、他の開発者(そして未来のあなた)が、注意を払うべきコードに集中し、何が起きているかを把握することがより簡単になります。</p>
+</li>
+<li><p><strong>要求の変更を受け入れやすい</strong></p>
+<p>名前をつけることができる値は何でも、ビューでも役に立つ可能性があります。例えば、いくら割引になっているかをユーザに知らせるメッセージを表示することに決めたとします。 また、消費税も計算して、最終的な価格の一部としてではなく、別々に表示することにします。</p>
+<p>小さく焦点が当てられた算出プロパティは、どのように情報が使われるかについての決めつけをより少なくし、少しのリファクタリングで要求の変更を受け入れられるようになります。</p>
+</li>
+</ul>
+</details>
+<div class="style-example example-bad">
+<h4 id="悪い例-19"><a href="#悪い例-19" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">  price: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> basePrice = <span class="keyword">this</span>.manufactureCost / (<span class="number">1</span> - <span class="keyword">this</span>.profitMargin)</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      basePrice -</div><div class="line">      basePrice * (<span class="keyword">this</span>.discountPercent || <span class="number">0</span>)</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-19"><a href="#良い例-19" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">  basePrice: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.manufactureCost / (<span class="number">1</span> - <span class="keyword">this</span>.profitMargin)</div><div class="line">  &#125;,</div><div class="line">  discount: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.basePrice * (<span class="keyword">this</span>.discountPercent || <span class="number">0</span>)</div><div class="line">  &#125;,</div><div class="line">  finalPrice: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.basePrice - <span class="keyword">this</span>.discount</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div>
+<h3 id="引用符付きの属性値-強く推奨"><a href="#引用符付きの属性値-強く推奨" class="headerlink" title="引用符付きの属性値 強く推奨"></a>引用符付きの属性値 <sup data-p="b">強く推奨</sup></h3><p><strong>空ではない HTML 属性の値は常に引用符(シングルコーテーションかダブルコーテーション、 JS の中で使われていない方)でくくるべきです。</strong></p>
+<p>HTML では、空白を含まない属性値は引用符でくくらなくてもよいことになっていますが、そのせいで空白の使用を <em>避けてしまい</em> 属性値が読みづらくなることをしばしばもたらします。</p>
+<div class="style-example example-bad">
+<h4 id="悪い例-20"><a href="#悪い例-20" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">text</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">AppSidebar</span> <span class="attr">:style</span>=<span class="string">&#123;width:sidebarWidth+</span>'<span class="attr">px</span>'&#125;&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-20"><a href="#良い例-20" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">AppSidebar</span> <span class="attr">:style</span>=<span class="string">"&#123; width: sidebarWidth + 'px' &#125;"</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<h3 id="ディレクティブの短縮記法-強く推奨"><a href="#ディレクティブの短縮記法-強く推奨" class="headerlink" title="ディレクティブの短縮記法 強く推奨"></a>ディレクティブの短縮記法 <sup data-p="b">強く推奨</sup></h3><p><strong>ディレクティブの短縮記法 (<code>v-bind:</code> に対する <code>:</code> 、 <code>v-on:</code> に対する <code>@</code>)は、常に使うか、まったく使わないかのどちらかにするべきです。</strong></p>
+<div class="style-example example-bad">
+<h4 id="悪い例-21"><a href="#悪い例-21" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span></span></div><div class="line"><span class="tag">  <span class="attr">v-bind:value</span>=<span class="string">"newTodoText"</span></span></div><div class="line"><span class="tag">  <span class="attr">:placeholder</span>=<span class="string">"newTodoInstructions"</span></span></div><div class="line"><span class="tag">&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span></span></div><div class="line"><span class="tag">  <span class="attr">v-on:input</span>=<span class="string">"onInput"</span></span></div><div class="line"><span class="tag">  @<span class="attr">focus</span>=<span class="string">"onFocus"</span></span></div><div class="line"><span class="tag">&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-21"><a href="#良い例-21" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span></span></div><div class="line"><span class="tag">  <span class="attr">:value</span>=<span class="string">"newTodoText"</span></span></div><div class="line"><span class="tag">  <span class="attr">:placeholder</span>=<span class="string">"newTodoInstructions"</span></span></div><div class="line"><span class="tag">&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span></span></div><div class="line"><span class="tag">  <span class="attr">v-bind:value</span>=<span class="string">"newTodoText"</span></span></div><div class="line"><span class="tag">  <span class="attr">v-bind:placeholder</span>=<span class="string">"newTodoInstructions"</span></span></div><div class="line"><span class="tag">&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span></span></div><div class="line"><span class="tag">  @<span class="attr">input</span>=<span class="string">"onInput"</span></span></div><div class="line"><span class="tag">  @<span class="attr">focus</span>=<span class="string">"onFocus"</span></span></div><div class="line"><span class="tag">&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span></span></div><div class="line"><span class="tag">  <span class="attr">v-on:input</span>=<span class="string">"onInput"</span></span></div><div class="line"><span class="tag">  <span class="attr">v-on:focus</span>=<span class="string">"onFocus"</span></span></div><div class="line"><span class="tag">&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<h2 id="優先度-C-のルール-推奨-任意の選択肢と認知上のオーバーヘッドの最小化"><a href="#優先度-C-のルール-推奨-任意の選択肢と認知上のオーバーヘッドの最小化" class="headerlink" title="優先度 C のルール: 推奨 (任意の選択肢と認知上のオーバーヘッドの最小化)"></a>優先度 C のルール: 推奨 (任意の選択肢と認知上のオーバーヘッドの最小化)</h2><h3 id="コンポーネント-インスタンス-オプション順序-推奨"><a href="#コンポーネント-インスタンス-オプション順序-推奨" class="headerlink" title="コンポーネント/インスタンス オプション順序 推奨"></a>コンポーネント/インスタンス オプション順序 <sup data-p="c">推奨</sup></h3><p><strong>コンポーネント/インスタンス オプションは､一貫した順序になるべきです｡</strong></p>
+<p>これは推奨するコンポーネントオプションの既定の順序です｡それらは種類分けされており､プラグインからどこに新たなプロパティを追加するか知ることができます｡</p>
+<ol>
+<li><p><strong>副作用</strong> (コンポーネント外への影響)</p>
+<ul>
+<li><code>el</code></li>
+</ul>
+</li>
+<li><p><strong>グローバルな認識</strong> (コンポーネントを超えた知識が必要)</p>
+<ul>
+<li><code>name</code></li>
+<li><code>parent</code></li>
+</ul>
+</li>
+<li><p><strong>コンポーネントの種類</strong> (コンポーネントの種類を変更)</p>
+<ul>
+<li><code>functional</code></li>
+</ul>
+</li>
+<li><p><strong>テンプレートの修飾子</strong> (テンプレートのコンパイル方法を変更)</p>
+<ul>
+<li><code>delimiters</code></li>
+<li><code>comments</code></li>
+</ul>
+</li>
+<li><p><strong>テンプレートの依存関係</strong> (テンプレートで使用されるアセット)</p>
+<ul>
+<li><code>components</code></li>
+<li><code>directives</code></li>
+<li><code>filters</code></li>
+</ul>
+</li>
+<li><p><strong>合成</strong> (プロパティをオプションにマージ)</p>
+<ul>
+<li><code>extends</code></li>
+<li><code>mixins</code></li>
+</ul>
+</li>
+<li><p><strong>インタフェース</strong> (コンポーネントへのインタフェース)</p>
+<ul>
+<li><code>inheritAttrs</code></li>
+<li><code>model</code></li>
+<li><code>props</code>/<code>propsData</code></li>
+</ul>
+</li>
+<li><p><strong>ローカルの状態</strong> (ローカル リアクティブ プロパティ)</p>
+<ul>
+<li><code>data</code></li>
+<li><code>computed</code></li>
+</ul>
+</li>
+<li><p><strong>イベント</strong> (リアクティブなイベントによって引き起こされたコールバック)</p>
+<ul>
+<li><code>watch</code></li>
+<li>ライフサイクルイベント (呼び出される順)</li>
+</ul>
+</li>
+<li><p><strong>リアクティブではないプロパティ</strong> (リアクティブシステムから独立したインスタンス プロパティ)</p>
+<ul>
+<li><code>methods</code></li>
+</ul>
+</li>
+<li><p><strong>レンダリング</strong> (コンポーネント出力の宣言的な記述)</p>
+<ul>
+<li><code>template</code>/<code>render</code></li>
+<li><code>renderError</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="要素の属性の順序-推奨"><a href="#要素の属性の順序-推奨" class="headerlink" title="要素の属性の順序 推奨"></a>要素の属性の順序 <sup data-p="c">推奨</sup></h3><p><strong>要素の属性 (コンポーネントを含む) は､一貫した順序になるべきです｡</strong></p>
+<p>これは推奨するコンポーネントオプションの既定の順序です｡それらは種類分けされており､カスタム属性とディレクティブをどこに追加するか知ることができます｡</p>
+<ol>
+<li><p><strong>定義</strong> (コンポーネントオプションを提供)</p>
+<ul>
+<li><code>is</code></li>
+</ul>
+</li>
+<li><p><strong>リスト描画</strong> (同じ要素の複数のバリエーションを作成する)</p>
+<ul>
+<li><code>v-for</code></li>
+</ul>
+</li>
+<li><p><strong>条件</strong> (要素が描画/表示されているかどうか)</p>
+<ul>
+<li><code>v-if</code></li>
+<li><code>v-else-if</code></li>
+<li><code>v-else</code></li>
+<li><code>v-show</code></li>
+<li><code>v-cloak</code></li>
+</ul>
+</li>
+<li><p><strong>描画修飾子</strong> (要素の描画方法を変更)</p>
+<ul>
+<li><code>v-pre</code></li>
+<li><code>v-once</code></li>
+</ul>
+</li>
+<li><p><strong>グローバルな認識</strong> (コンポーネントを超えた知識が必要)</p>
+<ul>
+<li><code>id</code></li>
+</ul>
+</li>
+<li><p><strong>一意の属性</strong> (一意の値を必要とする属性)</p>
+<ul>
+<li><code>ref</code></li>
+<li><code>key</code></li>
+<li><code>slot</code></li>
+</ul>
+</li>
+<li><p><strong>双方向バインディング</strong> (バインディングとイベントの結合)</p>
+<ul>
+<li><code>v-model</code></li>
+</ul>
+</li>
+<li><p><strong>その他の属性</strong> (すべての指定されていないバインドされた属性とバインドされていない属性)</p>
+</li>
+<li><p><strong>イベント</strong> (コンポーネントのイベントリスナ)</p>
+<ul>
+<li><code>v-on</code></li>
+</ul>
+</li>
+<li><p><strong>コンテンツ</strong> (要素のコンテンツを上書きする)</p>
+<ul>
+<li><code>v-html</code></li>
+<li><code>v-text</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="コンポーネント-インスタンス-オプションの空行-推奨"><a href="#コンポーネント-インスタンス-オプションの空行-推奨" class="headerlink" title="コンポーネント/インスタンス オプションの空行 推奨"></a>コンポーネント/インスタンス オプションの空行 <sup data-p="c">推奨</sup></h3><p><strong>特にオプションがスクロールなしでは画面に収まらなくなった場合､複数行に渡るプロバティの間に空行を追加してみてください｡</strong></p>
+<p>コンポーネントに窮屈さや読みづらさを感じたら､複数行に渡るプロバティの間に空行を追加する事でそれらを簡単に読み流すことができるようになります｡ Vim など､一部のエディタでは、このような書式を使用するとキーボードで簡単に移動することができます。</p>
+<div class="style-example example-good">
+<h4 id="良い例-22"><a href="#良い例-22" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">props: &#123;</div><div class="line">  value: &#123;</div><div class="line">    type: <span class="built_in">String</span>,</div><div class="line">    required: <span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  focused: &#123;</div><div class="line">    type: <span class="built_in">Boolean</span>,</div><div class="line">    <span class="keyword">default</span>: <span class="literal">false</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  label: <span class="built_in">String</span>,</div><div class="line">  icon: <span class="built_in">String</span></div><div class="line">&#125;,</div><div class="line"></div><div class="line">computed: &#123;</div><div class="line">  formattedValue: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  inputClasses: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// コンポーネントの読み取りや移動が容易であれば、</span></div><div class="line"><span class="comment">// 空行がなくても大丈夫です｡</span></div><div class="line">props: &#123;</div><div class="line">  value: &#123;</div><div class="line">    type: <span class="built_in">String</span>,</div><div class="line">    required: <span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line">  focused: &#123;</div><div class="line">    type: <span class="built_in">Boolean</span>,</div><div class="line">    <span class="keyword">default</span>: <span class="literal">false</span></div><div class="line">  &#125;,</div><div class="line">  label: <span class="built_in">String</span>,</div><div class="line">  icon: <span class="built_in">String</span></div><div class="line">&#125;,</div><div class="line">computed: &#123;</div><div class="line">  formattedValue: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;,</div><div class="line">  inputClasses: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div>
+<h3 id="単一ファイルコンポーネントのトップレベルの属性の順序-推奨"><a href="#単一ファイルコンポーネントのトップレベルの属性の順序-推奨" class="headerlink" title="単一ファイルコンポーネントのトップレベルの属性の順序 推奨"></a>単一ファイルコンポーネントのトップレベルの属性の順序 <sup data-p="c">推奨</sup></h3><p><strong><a href="../guide/single-file-components.html">単一ファイルコンポーネント</a>では､ <code>&lt;template&gt;</code> ､ <code>&lt;script&gt;</code> ､ <code>&lt;style&gt;</code> タグを一貫した順序にするべきです､ <code>&lt;style&gt;</code> は最後です､それは他の2つのうち少なくとも1つが常に必要だからです。</strong></p>
+<div class="style-example example-bad">
+<h4 id="悪い例-22"><a href="#悪い例-22" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- ComponentA.vue --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- ComponentB.vue --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-23"><a href="#良い例-23" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- ComponentA.vue --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- ComponentB.vue --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- ComponentA.vue --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- ComponentB.vue --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"><span class="comment">/* ... */</span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<h2 id="優先度-D-のルール-使用注意（潜在的に危険なパターン）"><a href="#優先度-D-のルール-使用注意（潜在的に危険なパターン）" class="headerlink" title="優先度 D のルール: 使用注意（潜在的に危険なパターン）"></a>優先度 D のルール: 使用注意（潜在的に危険なパターン）</h2><h3 id="key-を使わない-v-if-v-if-else-v-else-使用注意"><a href="#key-を使わない-v-if-v-if-else-v-else-使用注意" class="headerlink" title="key を使わない v-if/v-if-else/v-else 使用注意"></a><code>key</code> を使わない <code>v-if</code>/<code>v-if-else</code>/<code>v-else</code> <sup data-p="d">使用注意</sup></h3><p><strong>それらが同じ種類の要素の場合、通常は <code>v-if</code> + <code>v-else</code> と一緒に <code>key</code> を使用するのが最善です(例: どちらも <code>&lt;div&gt;</code> 要素).</strong></p>
+<p>デフォルトでは、Vue は可能な限り効率的に DOM を更新します。これは、同じ種類の要素間を切り替えるときに、既存の要素を取り除いてそこに新しい要素を作成するのではなく、単純に既存の要素を修正することを意味します。これらの要素が、実際には同一とみなされないほうが良い場合、<a href="https://jsfiddle.net/chrisvfritz/bh8fLeds/" target="_blank" rel="external">予期せぬ副作用</a>を起こすことがあります。</p>
+<div class="style-example example-bad">
+<h4 id="悪い例-23"><a href="#悪い例-23" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"error"</span>&gt;</span></div><div class="line">  Error: &#123;&#123; error &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  &#123;&#123; results &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-24"><a href="#良い例-24" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"error"</span> <span class="attr">key</span>=<span class="string">"search-status"</span>&gt;</span></div><div class="line">  Error: &#123;&#123; error &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span> <span class="attr">key</span>=<span class="string">"search-results"</span>&gt;</span></div><div class="line">  &#123;&#123; results &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">"error"</span>&gt;</span></div><div class="line">  Error: &#123;&#123; error &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  &#123;&#123; results &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<h3 id="scoped-付きの要素セレクタ-使用注意"><a href="#scoped-付きの要素セレクタ-使用注意" class="headerlink" title="scoped 付きの要素セレクタ 使用注意"></a><code>scoped</code> 付きの要素セレクタ <sup data-p="d">使用注意</sup></h3><p><strong><code>scoped</code> 付きの要素セレクタは避けるべきです。</strong></p>
+<p>たくさんの要素セレクタは低速なため、<code>scoped</code> 付きの要素セレクタよりも、クラスセレクタを使用します。</p>
+
+<details>
+<summary>
+  <h4>詳細な説明</h4>
+</summary>
+
+<p>スコープスタイルのために、Vue は <code>data-v-f3f3eg9</code> のような一意な属性をコンポーネントの要素に追加します。そして、この属性をもったマッチする要素のみが選択されるように、セレクタが変更されます（例: <code>button[data-v-f3f3eg9]</code>）。</p>
+<p>問題は、たくさんの<a href="http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&amp;sel=a%5Bhref%5D&amp;body=background%3A+%23CFD&amp;ne=1000" target="_blank" rel="external">要素-属性 セレクタ</a>（例: <code>button[data-v-f3f3eg9]</code>）は、<a href="http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&amp;sel=.class%5Bhref%5D&amp;body=background%3A+%23CFD&amp;ne=1000" target="_blank" rel="external">クラス-属性 セレクタ</a>（例: <code>.btn-close[data-v-f3f3eg9]</code>）よりもかなり遅くなることです。よって可能ならクラスセレクタが推奨されます。</p>
+</details>
+<div class="style-example example-bad">
+<h4 id="悪い例-24"><a href="#悪い例-24" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">button &#123;</span></div><div class="line"><span class="undefined">  background-color: red;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-25"><a href="#良い例-25" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-close"</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css"><span class="selector-class">.btn-close</span> &#123;</span></div><div class="line"><span class="undefined">  background-color: red;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+<h3 id="暗黙的な親子間のやりとり-使用注意"><a href="#暗黙的な親子間のやりとり-使用注意" class="headerlink" title="暗黙的な親子間のやりとり 使用注意"></a>暗黙的な親子間のやりとり <sup data-p="d">使用注意</sup></h3><p><strong>親子間のやりとりは、<code>this.$parent</code> や変化するプロパティよりも、プロパティとイベントが推奨されます。</strong></p>
+<p>理想的な Vue アプリケーションでは、props down, events up となります。この習慣に従えば、コンポーネントの理解が簡単になります。ですが、プロパティの変化や <code>this.$parent</code> が、深く結合している2つのコンポーネントを単純化できるようなエッジケースも存在します。</p>
+<p>問題は、これらのパターンが便利になるような、<em>シンプルな</em> ケースも多く存在することです。注意: 短期間の利便性（少ないコードを書くこと）のための、取引のシンプルさ(状態の流れを理解出来るようになる)に誘惑されないでください。</p>
+<div class="style-example example-bad">
+<h4 id="悪い例-25"><a href="#悪い例-25" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'TodoItem'</span>, &#123;</div><div class="line">  props: &#123;</div><div class="line">    todo: &#123;</div><div class="line">      type: <span class="built_in">Object</span>,</div><div class="line">      required: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  template: <span class="string">'&lt;input v-model="todo.text"&gt;'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'TodoItem'</span>, &#123;</div><div class="line">  props: &#123;</div><div class="line">    todo: &#123;</div><div class="line">      type: <span class="built_in">Object</span>,</div><div class="line">      required: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  methods: &#123;</div><div class="line">    removeTodo () &#123;</div><div class="line">      <span class="keyword">var</span> vm = <span class="keyword">this</span></div><div class="line">      vm.$parent.todos = vm.$parent.todos.filter(<span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> todo.id !== vm.todo.id</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  template: <span class="string">`</span></div><div class="line"><span class="string">    &lt;span&gt;</span></div><div class="line"><span class="string">      &#123;&#123; todo.text &#125;&#125;</span></div><div class="line"><span class="string">      &lt;button @click="removeTodo"&gt;</span></div><div class="line"><span class="string">        X</span></div><div class="line"><span class="string">      &lt;/button&gt;</span></div><div class="line"><span class="string">    &lt;/span&gt;</span></div><div class="line"><span class="string">  `</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-26"><a href="#良い例-26" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'TodoItem'</span>, &#123;</div><div class="line">  props: &#123;</div><div class="line">    todo: &#123;</div><div class="line">      type: <span class="built_in">Object</span>,</div><div class="line">      required: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  template: <span class="string">`</span></div><div class="line"><span class="string">    &lt;input</span></div><div class="line"><span class="string">      :value="todo.text"</span></div><div class="line"><span class="string">      @input="$emit('input', $event.target.value)"</span></div><div class="line"><span class="string">    &gt;</span></div><div class="line"><span class="string">  `</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'TodoItem'</span>, &#123;</div><div class="line">  props: &#123;</div><div class="line">    todo: &#123;</div><div class="line">      type: <span class="built_in">Object</span>,</div><div class="line">      required: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  template: <span class="string">`</span></div><div class="line"><span class="string">    &lt;span&gt;</span></div><div class="line"><span class="string">      &#123;&#123; todo.text &#125;&#125;</span></div><div class="line"><span class="string">      &lt;button @click="$emit('delete')"&gt;</span></div><div class="line"><span class="string">        X</span></div><div class="line"><span class="string">      &lt;/button&gt;</span></div><div class="line"><span class="string">    &lt;/span&gt;</span></div><div class="line"><span class="string">  `</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</div>
+<h3 id="Flux-以外の状態管理-使用注意"><a href="#Flux-以外の状態管理-使用注意" class="headerlink" title="Flux 以外の状態管理 使用注意"></a>Flux 以外の状態管理 <sup data-p="d">使用注意</sup></h3><p><strong> グローバル状態管理には、<code>this.$root</code> やグローバルイベントバスよりも、<a href="https://github.com/vuejs/vuex" target="_blank" rel="external">Vuex</a> が推奨されます </strong></p>
+<p><code>this.$root</code> や <a href="../guide/migration.html#dispatch-および-broadcast-置き換え">グローバルイベントバス</a> を使用した状態管理は非常にシンプルなケースでは便利かもしれませんが、ほとんどのアプリケーションにとっては適切ではありません。Vuex は状態管理のための中心地だけではなく、整理、追跡、そして状態変更のデバッグのためのツールも提供します。</p>
+
+<div class="style-example example-bad">
+<h4 id="悪い例-26"><a href="#悪い例-26" class="headerlink" title="悪い例"></a>悪い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// main.js</span></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  data: &#123;</div><div class="line">    todos: []</div><div class="line">  &#125;,</div><div class="line">  created: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.$on(<span class="string">'remove-todo'</span>, <span class="keyword">this</span>.removeTodo)</div><div class="line">  &#125;,</div><div class="line">  methods: &#123;</div><div class="line">    removeTodo: <span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> todoIdToRemove = todo.id</div><div class="line">      <span class="keyword">this</span>.todos = <span class="keyword">this</span>.todos.filter(<span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> todo.id !== todoIdToRemove</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</div>
+<div class="style-example example-good">
+<h4 id="良い例-27"><a href="#良い例-27" class="headerlink" title="良い例"></a>良い例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// store/modules/todos.js</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  state: &#123;</div><div class="line">    list: []</div><div class="line">  &#125;,</div><div class="line">  mutations: &#123;</div><div class="line">    REMOVE_TODO (state, todoId) &#123;</div><div class="line">      state.list = state.list.filter(<span class="function"><span class="params">todo</span> =&gt;</span> todo.id !== todoId)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  actions: &#123;</div><div class="line">    removeTodo (&#123; commit, state &#125;, todo) &#123;</div><div class="line">      commit(<span class="string">'REMOVE_TODO'</span>, todo.id)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- TodoItem.vue --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span></div><div class="line">    &#123;&#123; todo.text &#125;&#125;</div><div class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"removeTodo(todo)"</span>&gt;</span></div><div class="line">      X</div><div class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="keyword">import</span> &#123; mapActions &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">  props: &#123;</span></div><div class="line"><span class="undefined">    todo: &#123;</span></div><div class="line"><span class="javascript">      type: <span class="built_in">Object</span>,</span></div><div class="line"><span class="javascript">      required: <span class="literal">true</span></span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;,</span></div><div class="line"><span class="javascript">  methods: mapActions([<span class="string">'removeTodo'</span>])</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</div>
+
+<script>
+(function () {
+  var enforcementTypes = {
+    none: '<span title="There is unfortunately no way to automatically enforce this rule.">self-discipline</span>',
+    runtime: 'runtime error',
+    linter: '<a href="https://github.com/vuejs/eslint-plugin-vue#eslint-plugin-vue" target="_blank">plugin:vue/recommended</a>'
+  }
+  Vue.component('sg-enforcement', {
+    template: '\
+      <span>\
+        <strong>Enforcement</strong>:\
+        <span class="style-rule-tag" v-html="humanType"/>\
+      </span>\
+    ',
+    props: {
+      type: {
+        type: String,
+        required: true,
+        validate: function (value) {
+          Object.keys(enforcementTypes).indexOf(value) !== -1
+        }
+      }
+    },
+    computed: {
+      humanType: function () {
+        return enforcementTypes[this.type]
+      }
+    }
+  })
+
+  // new Vue({
+  //  el: '#main'
+  // })
+})()
+</script>
+
+
+  
+  <div class="footer">
+    <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div class="bsa-cpc"></div>
+<script>
+  (function(){
+    if(typeof _bsa !== 'undefined' && _bsa) {
+    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
+      target: '.bsa-cpc',
+      align: 'horizontal',
+      disable_css: 'true'
+    });
+      }
+  })();
+</script>
+
+    間違いを見つけた、またはドキュメントに貢献したいですか？
+    <a href="https://github.com/vuejs/jp.vuejs.org/blob/lang-ja/src/v2/style-guide/index.md" target="_blank">Github 上でこのページを編集する</a> か、<a href="https://github.com/vuejs/jp.vuejs.org" target="_blank">Github からこのサイトを Fork してプルリクエストしましょう
+    </a>！
+  </div>
+</div>
+
+        
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '0a75952972806d9ad07e387d08e9cc4c',
+      indexName: 'vuejs_jp',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] }
+      })
+    })
+    </script>
+
+    <!-- fastclick -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+    </script>
+  </body>
+</html>
